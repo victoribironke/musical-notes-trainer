@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+
+:root {
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+  --rose-red: hsl(347, 91%, 54%);
+  --rose-water: hsl(355, 100%, 88%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oxygen", sans-serif;
+  transition: all 0.2s ease-in-out;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--black);
+}
+
+main {
+  width: 60%;
+  max-width: 850px;
+  height: auto;
+  padding: 1rem;
+  background: var(--white);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.selector {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  justify-content: center;
+  width: 50%;
+}
+
+.notes {
+  border-radius: 5px;
+  width: 50%;
+  padding: 1rem;
+  background: var(--rose-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  color: white;
+  letter-spacing: 5px;
+  font-weight: 700;
+  align-self: stretch;
+}
+
+.key-title,
+.scale-title,
+.speed-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--rose-red);
+}
+
+.key,
+.scale,
+.speed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.9rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 3px solid var(--rose-water);
+  position: relative;
+}
+
+.key:hover,
+.scale:hover,
+.speed:hover {
+  border-color: var(--rose-red);
+}
+
+.key img,
+.scale img,
+.speed img {
+  width: 20px;
+}
+
+.key > p,
+.scale > p,
+.speed > p {
+  color: var(--rose-red);
+  font-size: 1.1rem;
+  margin-right: auto;
+}
+
+.key-options,
+.scale-options,
+.speed-options {
+  position: absolute;
+  background: var(--white);
+  width: 101.5%;
+  height: auto;
+  display: none;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  top: 2.5rem;
+  z-index: 2;
+  padding: 0.8rem 0.5rem;
+  border-radius: 5px;
+  border: 3px solid var(--rose-red);
+}
+
+.key-options p,
+.scale-options p,
+.speed-options p {
+  color: var(--rose-red);
+  width: auto;
+  height: 35px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: 3px solid var(--rose-water);
+  cursor: pointer;
+}
+
+.key-options p:hover,
+.scale-options p:hover,
+.speed-options p:hover {
+  background: var(--rose-red);
+  border-color: var(--rose-red);
+  color: var(--white);
+}
+
+button {
+  padding: 0.7rem;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background: var(--rose-red);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 0.4rem;
+}
+
+button:hover {
+  scale: 1.03;
+}
+
+#show {
+  display: flex;
+}
+
+@media (width >= 1000px) {
+  main {
+    scale: 1.2;
+  }
+}
