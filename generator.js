@@ -73,6 +73,19 @@ const pentatonicScale = (keys) => {
   return scale;
 };
 
+const wholetoneScale = (keys) => {
+  const scale = [];
+
+  for (let i = 0; i < keys.length; i++) {
+    if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 11) {
+      continue;
+    }
+    scale.push(keys[i]);
+  }
+
+  return scale;
+};
+
 const chromaticScale = (keys) => {
   return keys;
 };
@@ -80,4 +93,10 @@ const chromaticScale = (keys) => {
 
 // console.log(pentatonicScale(newKeys));
 export default generate;
-export { majorScale, minorScale, pentatonicScale, chromaticScale };
+export {
+  majorScale,
+  minorScale,
+  pentatonicScale,
+  wholetoneScale,
+  chromaticScale,
+};

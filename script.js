@@ -2,6 +2,7 @@ import generate, {
   majorScale,
   minorScale,
   pentatonicScale,
+  wholetoneScale,
   chromaticScale,
 } from "./generator.js";
 
@@ -63,6 +64,8 @@ start.addEventListener("click", () => {
       train(minorScale(generate(key)), speed);
     } else if (scale == "Pentatonic") {
       train(pentatonicScale(generate(key)), speed);
+    } else if (scale == "Whole Tone") {
+      train(wholetoneScale(generate(key)), speed);
     } else if (scale == "Chromatic") {
       train(chromaticScale(generate(key)), speed);
     }
