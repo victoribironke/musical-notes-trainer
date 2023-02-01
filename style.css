@@ -59,6 +59,7 @@ main {
   letter-spacing: 5px;
   font-weight: 700;
   align-self: stretch;
+  justify-self: center;
 }
 
 .key-title,
@@ -162,6 +163,25 @@ button:hover {
 
 #show {
   display: flex;
+}
+
+@media (width < 750px) {
+  main {
+    scale: 1.1;
+    /* width: auto; */
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
+  }
+
+  .notes {
+    width: 100%;
+    align-self: center;
+  }
+
+  .selector {
+    width: 100%;
+  }
 }
 
 @media (width >= 1000px) {
