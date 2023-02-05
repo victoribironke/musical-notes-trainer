@@ -60,6 +60,19 @@ const minorScale = (keys) => {
   return scale;
 };
 
+const bluesScale = (keys) => {
+  const scale = [];
+
+  for (let i = 0; i < keys.length; i++) {
+    if (i == 1 || i == 5 || i == 6 || i == 8 || i == 10 || i == 11) {
+      continue;
+    }
+    scale.push(keys[i]);
+  }
+
+  return scale;
+};
+
 const pentatonicScale = (keys) => {
   const scale = [];
 
@@ -96,6 +109,7 @@ export default generate;
 export {
   majorScale,
   minorScale,
+  bluesScale,
   pentatonicScale,
   wholetoneScale,
   chromaticScale,

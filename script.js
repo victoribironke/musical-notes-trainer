@@ -1,6 +1,7 @@
 import generate, {
   majorScale,
   minorScale,
+  bluesScale,
   pentatonicScale,
   wholetoneScale,
   chromaticScale,
@@ -51,9 +52,7 @@ speedOptions.forEach((option) =>
   })
 );
 start.addEventListener("click", () => {
-  start.textContent = start.textContent == "Start" ? "Stop" : "Start";
-
-  if (start.textContent == "Stop") {
+  if (start.textContent == "Start") {
     const key = document.querySelector(".key > p").textContent;
     const scale = document.querySelector(".scale > p").textContent;
     const speed = document.querySelector(".speed > p").textContent;
@@ -62,6 +61,8 @@ start.addEventListener("click", () => {
       train(majorScale(generate(key)), speed);
     } else if (scale == "Minor") {
       train(minorScale(generate(key)), speed);
+    } else if (scale == "Blues") {
+      train(bluesScale(generate(key)), speed);
     } else if (scale == "Pentatonic") {
       train(pentatonicScale(generate(key)), speed);
     } else if (scale == "Whole Tone") {
@@ -72,4 +73,6 @@ start.addEventListener("click", () => {
   } else {
     clearInterval(interval);
   }
+
+  start.textContent = start.textContent == "Start" ? "Stop" : "Start";
 });
