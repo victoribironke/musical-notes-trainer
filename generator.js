@@ -102,6 +102,19 @@ const wholetoneScale = (keys) => {
 const chromaticScale = (keys) => {
   return keys;
 };
+
+const diminishedScale = (keys) => {
+  const scale = [];
+
+  for (let i = 0; i < keys.length; i++) {
+    if (i == 1 || i == 4 || i == 7 || i == 10) {
+      continue;
+    }
+    scale.push(keys[i]);
+  }
+
+  return scale;
+};
 /* END */
 
 // console.log(pentatonicScale(newKeys));
@@ -113,4 +126,5 @@ export {
   pentatonicScale,
   wholetoneScale,
   chromaticScale,
+  diminishedScale,
 };

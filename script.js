@@ -5,6 +5,7 @@ import generate, {
   pentatonicScale,
   wholetoneScale,
   chromaticScale,
+  diminishedScale,
 } from "./generator.js";
 
 const keyDropdown = document.querySelector(".key");
@@ -67,6 +68,8 @@ start.addEventListener("click", () => {
       train(wholetoneScale(generate(key)), speed);
     } else if (scale == "Chromatic") {
       train(chromaticScale(generate(key)), speed);
+    } else if (scale == "Diminished") {
+      train(diminishedScale(generate(key)), speed);
     }
   } else {
     clearInterval(interval);
