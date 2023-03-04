@@ -24,33 +24,31 @@ const train = (arr, speed) => {
   }, 1000 / parseInt(speed));
 };
 
-keyDropdown.addEventListener("click", () => {
-  document.querySelector(".key-options").id =
-    document.querySelector(".key-options").id === "" ? "show" : "";
+// Showing the selection dropdown
+[
+  { arr: keyDropdown, selector: ".key-options" },
+  { arr: scaleDropdown, selector: ".scale-options" },
+  { arr: speedDropdown, selector: ".speed-options" },
+].forEach((obj) => {
+  obj.arr.addEventListener("click", () => {
+    const options = document.querySelector(obj.selector);
+    options.id = options.id === "" ? "show" : "";
+  });
 });
-keyOptions.forEach((option) =>
-  option.addEventListener("click", () => {
-    keyDropdown.querySelector("p").textContent = option.textContent;
-  })
-);
-scaleDropdown.addEventListener("click", () => {
-  document.querySelector(".scale-options").id =
-    document.querySelector(".scale-options").id === "" ? "show" : "";
+
+// Selecting an option from the dropdown
+[
+  { arr: keyOptions, selector: keyDropdown },
+  { arr: scaleOptions, selector: scaleDropdown },
+  { arr: speedOptions, selector: speedDropdown },
+].forEach((obj) => {
+  obj.arr.forEach((option) =>
+    option.addEventListener("click", () => {
+      obj.selector.querySelector("p").textContent = option.textContent;
+    })
+  );
 });
-scaleOptions.forEach((option) =>
-  option.addEventListener("click", () => {
-    scaleDropdown.querySelector("p").textContent = option.textContent;
-  })
-);
-speedDropdown.addEventListener("click", () => {
-  document.querySelector(".speed-options").id =
-    document.querySelector(".speed-options").id === "" ? "show" : "";
-});
-speedOptions.forEach((option) =>
-  option.addEventListener("click", () => {
-    speedDropdown.querySelector("p").textContent = option.textContent;
-  })
-);
+
 start.addEventListener("click", () => {
   if (start.textContent == "Start") {
     const key = document.querySelector(".key > p").textContent;
